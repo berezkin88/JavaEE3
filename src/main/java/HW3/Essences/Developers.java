@@ -35,12 +35,11 @@ public class Developers {
     public Developers() {
     }
 
-    public Developers(String name, String surname, int age, double salary, int project) {
+    public Developers(String name, String surname, int age, double salary) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.salary = salary;
-        this.project = project;
     }
 
     @Override
@@ -51,22 +50,15 @@ public class Developers {
         Developers that = (Developers) o;
 
         if (age != that.age) return false;
-        if (Double.compare(that.salary, salary) != 0) return false;
-        if (project != that.project) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         return surname != null ? surname.equals(that.surname) : that.surname == null;
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = name != null ? name.hashCode() : 0;
+        int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
         result = 31 * result + age;
-        temp = Double.doubleToLongBits(salary);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + project;
         return result;
     }
 
