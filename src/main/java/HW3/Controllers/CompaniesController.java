@@ -34,12 +34,12 @@ public class CompaniesController {
     }
 
     @Transactional
-    public Companies findById(int id) {
+    public Companies findCompanyById(int id) {
         return companiesDAO.load(id);
     }
 
     @Transactional
-    public Companies findByName (String companyName) {
+    public Companies findCompanyByName (String companyName) {
         return companiesDAO.findByName(companyName);
     }
 
