@@ -22,7 +22,9 @@ public class Main {
     }
 
     private void start() {
+        companiesController.deleteCompany("Moby");
         companiesController.getAllCompanies().forEach(System.out::println);
+
     }
 
     public void setCompaniesController(CompaniesController companiesController) {
