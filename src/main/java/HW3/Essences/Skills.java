@@ -27,9 +27,8 @@ public class Skills {
     public Skills() {
     }
 
-    public Skills(String area_of_skill, int developer_id) {
+    public Skills(String area_of_skill) {
         this.area_of_skill = area_of_skill;
-        this.developer_id = developer_id;
     }
 
     @Override
@@ -39,15 +38,12 @@ public class Skills {
 
         Skills skills = (Skills) o;
 
-        if (developer_id != skills.developer_id) return false;
         return area_of_skill != null ? area_of_skill.equals(skills.area_of_skill) : skills.area_of_skill == null;
     }
 
     @Override
     public int hashCode() {
-        int result = area_of_skill != null ? area_of_skill.hashCode() : 0;
-        result = 31 * result + developer_id;
-        return result;
+        return area_of_skill != null ? area_of_skill.hashCode() : 0;
     }
 
     @Override

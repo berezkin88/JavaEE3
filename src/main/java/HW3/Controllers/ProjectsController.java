@@ -1,7 +1,6 @@
 package HW3.Controllers;
 
 import HW3.DAO.ProjectsDAO;
-import HW3.DAO.hibernate.DAOImp;
 import HW3.Essences.Projects;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +11,7 @@ import java.util.Set;
 /**
  * Created by Alexander on 14/04/2017.
  */
-public class ProjectsController extends DAOImp {
+public class ProjectsController {
 
     private ProjectsDAO projectsDAO;
 

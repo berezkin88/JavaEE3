@@ -22,5 +22,6 @@ default-autowire="byName">
     <bean id="projectsDAO" class="HW3.DAO.hibernate.HProjectsDAO"/>
 
     <bean id="skillsController" class="HW3.Controllers.SkillsController"/>
+    <bean id="skillsDAO" class="HW3.DAO.hibernate.HSkillsDAO"/>
 
 </beans>

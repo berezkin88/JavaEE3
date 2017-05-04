@@ -1,39 +1,50 @@
 package HW3.Controllers;
 
+import HW3.DAO.SkillsDAO;
 import HW3.DAO.hibernate.DAOImp;
 import HW3.Essences.Skills;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Alexander on 15/04/2017.
  */
-public class SkillsController extends DAOImp {
-    private DAOImp daoImp;
+public class SkillsController {
+    private SkillsDAO skillsDAO;
 
-    public List<Skills> readAll() throws SQLException {
-        List<Skills> result = new ArrayList<>();
-
-        return result;
+    @Transactional
+    public List<Skills> getAllCompanies(){
+        return skillsDAO.findAll();
     }
 
-    public List<Skills> read(String params) throws SQLException{
-        List<Skills> result = new ArrayList<>();
+    @Transactional
+    public void createNewCompany(String areaOfSkill){
+        Skills skill = new Skills();
+        skill.setArea_of_skill(areaOfSkill);
 
-        return result;
+        Set<Skills> check = new HashSet<>(skillsDAO.findAll());
+
+        if (!check.contains(skill)){
+            skillsDAO.save(skill);
+        }
     }
 
-    private Skills createSkills(ResultSet resultSet) throws SQLException {
-        Skills skills = new Skills();
-        skills.setSkill_id(resultSet.getInt("skill_id"));
-        skills.setArea_of_skill(resultSet.getString("area_of_skill"));
-        skills.setDeveloper_id(resultSet.getInt("developer_id"));
-        return skills;
+    @Transactional
+    public Skills findSkillById(int id) {
+        return skillsDAO.load(id);
     }
 
-    public void setDaoImp(DAOImp daoImp) {
-        this.daoImp = daoImp;
+    @Transactional
+    public Skills findSkillByName (String areaOfSkill) {
+        return skillsDAO.findByName(areaOfSkill);
+    }
+
+    public void setSkillsDAO(SkillsDAO skillsDAO) {
+        this.skillsDAO = skillsDAO;
     }
 }
