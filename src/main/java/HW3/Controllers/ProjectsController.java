@@ -1,41 +1,58 @@
 package HW3.Controllers;
 
+import HW3.DAO.ProjectsDAO;
 import HW3.DAO.hibernate.DAOImp;
 import HW3.Essences.Projects;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.*;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Alexander on 14/04/2017.
  */
 public class ProjectsController extends DAOImp {
-    private DAOImp daoImp;
 
-    public List<Projects> readAll() throws SQLException {
-        List<Projects> result = new ArrayList<>();
+    private ProjectsDAO projectsDAO;
 
-        return result;
+    @Transactional
+    public List<Projects> getAllProjects(){
+        return projectsDAO.findAll();
     }
 
-    public List<Projects> read(String params) throws SQLException{
-        List<Projects> result = new ArrayList<>();
+    @Transactional
+    public void createNewProject(String projectTitle){
+        Projects project = new Projects();
+        project.setProject_title(projectTitle);
 
-        return result;
+        Set<Projects> check = new HashSet<>(projectsDAO.findAll());
+
+        if (!check.contains(project)){
+            projectsDAO.save(project);
+        }
     }
 
-    private Projects createProjects(ResultSet resultSet) throws SQLException {
-        Projects projects = new Projects();
-        projects.setProject_id(resultSet.getInt("project_id"));
-        projects.setProject_title(resultSet.getString("project_title"));
-        projects.setCompany_id(resultSet.getInt("company_id"));
-        projects.setCustomer_id(resultSet.getInt("customer_id"));
-        projects.setCost(resultSet.getInt("cost"));
-        return projects;
+    @Transactional
+    public Projects findProjectById(int id) {
+        return projectsDAO.load(id);
     }
 
-    public void setDaoImp(DAOImp daoImp) {
-        this.daoImp = daoImp;
+    @Transactional
+    public Projects findProjectByTitle (String projectTitle) {
+        return projectsDAO.findByName(projectTitle);
+    }
+
+    @Transactional
+    public void deleteProject(String projectTitle){
+        Projects project = projectsDAO.findByName(projectTitle);
+        Set<Projects> check = new HashSet<>(projectsDAO.findAll());
+        if (check.contains(project)){
+            projectsDAO.delete(project);
+        }
+    }
+
+    public void setProjectsDAO(ProjectsDAO projectsDAO) {
+        this.projectsDAO = projectsDAO;
     }
 }

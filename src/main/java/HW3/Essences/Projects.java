@@ -32,11 +32,8 @@ public class Projects {
     public Projects() {
     }
 
-    public Projects(String project_title, int company_id, int customer_id, int cost) {
+    public Projects(String project_title) {
         this.project_title = project_title;
-        this.company_id = company_id;
-        this.customer_id = customer_id;
-        this.cost = cost;
     }
 
     @Override
@@ -46,19 +43,12 @@ public class Projects {
 
         Projects projects = (Projects) o;
 
-        if (company_id != projects.company_id) return false;
-        if (customer_id != projects.customer_id) return false;
-        if (cost != projects.cost) return false;
         return project_title != null ? project_title.equals(projects.project_title) : projects.project_title == null;
     }
 
     @Override
     public int hashCode() {
-        int result = project_title != null ? project_title.hashCode() : 0;
-        result = 31 * result + company_id;
-        result = 31 * result + customer_id;
-        result = 31 * result + cost;
-        return result;
+        return project_title != null ? project_title.hashCode() : 0;
     }
 
     @Override
