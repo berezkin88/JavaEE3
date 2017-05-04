@@ -12,7 +12,7 @@ import java.sql.*;
 public class DAOImp implements DAOInterface {
     private SessionFactory sessionFactory;
 
-//    Not sure need it
+    //    Not sure need it
     @Override
     @Transactional
     public void createDatabase(String databaseName) throws SQLException {
@@ -20,18 +20,20 @@ public class DAOImp implements DAOInterface {
 
     }
 
-//    Not sure need it
+    //    Not sure need it
     @Override
     @Transactional
     public void createTable(String tableName, String params) throws SQLException {
         sessionFactory.getCurrentSession().createSQLQuery("CREATE TABLE " + tableName + "(" + params +")").executeUpdate();
     }
 
+    //    Not sure need it
     @Override
     public void deleteTable(String tableName) {
         sessionFactory.getCurrentSession().createSQLQuery("DROP TABLE " + tableName);
     }
 
+    //    Not sure need it
     @Override
     public void deleteDB(String databaseName) {
         sessionFactory.getCurrentSession().createSQLQuery("DROP TABLE " + databaseName);
