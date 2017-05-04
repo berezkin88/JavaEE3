@@ -1,7 +1,7 @@
-package Controllers;
+package HW3.Controllers;
 
-import DAO.hibernate.DAOImp;
-import Essences.Projects;
+import HW3.DAO.hibernate.DAOImp;
+import HW3.Essences.Projects;
 
 import java.sql.*;
 import java.util.ArrayList;

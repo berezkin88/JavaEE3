@@ -1,4 +1,4 @@
-package Essences;
+package HW3.Essences;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -52,7 +52,7 @@ public class Skills {
 
     @Override
     public String toString() {
-        return "Essences.Skills{" +
+        return "HW3.Essences.Skills{" +
                 "skill_id=" + skill_id +
                 ", area_of_skill='" + area_of_skill + '\'' +
                 ", developer_id=" + developer_id +

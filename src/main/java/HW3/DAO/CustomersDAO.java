@@ -1,11 +1,11 @@
-package DAO;
+package HW3.DAO;
 
-import Essences.Customers;
+import HW3.Essences.Customers;
 
 /**
  * Created by Alexander on 04/05/2017.
  */
-public interface customersDAO {
+public interface CustomersDAO {
 
     void save(Customers customer);
     Customers load (int id);

@@ -1,4 +1,6 @@
-import Controllers.*;
+package HW3;
+
+import HW3.Controllers.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,7 +22,7 @@ public class Main {
     }
 
     private void start() {
-
+        companiesController.getAllCompanies().forEach(System.out::println);
     }
 
     public void setCompaniesController(CompaniesController companiesController) {

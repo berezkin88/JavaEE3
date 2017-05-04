@@ -1,6 +1,5 @@
-package Essences;
+package HW3.Essences;
 
-import com.sun.javafx.sg.prism.NGAmbientLight;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -64,7 +63,7 @@ public class Projects {
 
     @Override
     public String toString() {
-        return "Essences.Projects{" +
+        return "HW3.Essences.Projects{" +
                 "project_id=" + project_id +
                 ", project_title='" + project_title + '\'' +
                 ", company_id=" + company_id +

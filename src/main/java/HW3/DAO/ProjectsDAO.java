@@ -1,11 +1,11 @@
-package DAO;
+package HW3.DAO;
 
-import Essences.Projects;
+import HW3.Essences.Projects;
 
 /**
  * Created by Alexander on 04/05/2017.
  */
-public interface projectsDAO {
+public interface ProjectsDAO {
     void save(Projects project);
     Projects load (int id);
     Projects findByName (Projects project);

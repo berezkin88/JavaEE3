@@ -5,14 +5,16 @@
 default-autowire="byName">
 
 
-    <bean id="main" class="Main"/>
+    <bean id="main" class="HW3.Main"/>
 
-    <bean id="daoImp" class="DAO.hibernate.DAOImp"/>
+    <bean id="daoImp" class="HW3.DAO.hibernate.DAOImp"/>
 
-    <bean id="companiesController" class="Controllers.CompaniesController"/>
-    <bean id="customersController" class="Controllers.CustomersController"/>
-    <bean id="developersController" class="Controllers.DevelopersController"/>
-    <bean id="projectsController" class="Controllers.ProjectsController"/>
-    <bean id="skillsController" class="Controllers.SkillsController"/>
+    <bean id="companiesController" class="HW3.Controllers.CompaniesController"/>
+    <bean id="companiesDAO" class="HW3.DAO.hibernate.HCompaniesDAO"/>
+
+    <bean id="customersController" class="HW3.Controllers.CustomersController"/>
+    <bean id="developersController" class="HW3.Controllers.DevelopersController"/>
+    <bean id="projectsController" class="HW3.Controllers.ProjectsController"/>
+    <bean id="skillsController" class="HW3.Controllers.SkillsController"/>
 
 </beans>

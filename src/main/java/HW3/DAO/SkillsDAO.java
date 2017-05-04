@@ -1,11 +1,11 @@
-package DAO;
+package HW3.DAO;
 
-import Essences.Skills;
+import HW3.Essences.Skills;
 
 /**
  * Created by Alexander on 04/05/2017.
  */
-public interface skillsDAO {
+public interface SkillsDAO {
     void save(Skills skill);
     Skills load (int id);
     Skills findByName (Skills skill);

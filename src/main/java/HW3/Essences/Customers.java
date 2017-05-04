@@ -1,4 +1,4 @@
-package Essences;
+package HW3.Essences;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -45,7 +45,7 @@ public class Customers {
 
     @Override
     public String toString() {
-        return "Essences.Customers{" +
+        return "HW3.Essences.Customers{" +
                 "customer_id=" + customer_id +
                 ", customer_name='" + customer_name + '\'' +
                 '}';

@@ -1,6 +1,6 @@
-package DAO.hibernate;
+package HW3.DAO.hibernate;
 
-import DAO.DAOInterface;
+import HW3.DAO.DAOInterface;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,7 +1,6 @@
-package DAO;
+package HW3.DAO;
 
 import java.sql.SQLException;
-import java.util.List;
 
 /**
  * Created by Alexander on 08/04/2017.
