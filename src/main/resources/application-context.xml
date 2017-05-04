@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+default-autowire="byName">
+
+
+    <bean id="main" class="Main"/>
+
+    <bean id="daoImp" class="DAO.hibernate.DAOImp"/>
+
+    <bean id="companiesController" class="Controllers.CompaniesController"/>
+    <bean id="customersController" class="Controllers.CustomersController"/>
+    <bean id="developersController" class="Controllers.DevelopersController"/>
+    <bean id="projectsController" class="Controllers.ProjectsController"/>
+    <bean id="skillsController" class="Controllers.SkillsController"/>
+
+</beans>
