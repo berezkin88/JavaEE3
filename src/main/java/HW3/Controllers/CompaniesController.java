@@ -50,7 +50,6 @@ public class CompaniesController {
          if (check.contains(company)){
              companiesDAO.delete(company);
          }
-
     }
 
 
