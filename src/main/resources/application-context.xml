@@ -16,7 +16,7 @@ default-autowire="byName">
     <bean id="customersDAO" class="HW3.DAO.hibernate.HCustomersDAO"/>
 
     <bean id="developersController" class="HW3.Controllers.DevelopersController"/>
-    <bean id="developerDAO" class="HW3.DAO.hibernate.HDeveloperDAO"/>
+    <bean id="developersDAO" class="HW3.DAO.hibernate.HDevelopersDAO"/>
 
     <bean id="projectsController" class="HW3.Controllers.ProjectsController"/>
     <bean id="projectsDAO" class="HW3.DAO.hibernate.HProjectsDAO"/>

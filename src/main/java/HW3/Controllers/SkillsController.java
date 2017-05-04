@@ -18,7 +18,7 @@ public class SkillsController {
     private SkillsDAO skillsDAO;
 
     @Transactional
-    public List<Skills> getAllCompanies(){
+    public List<Skills> getAllSkills(){
         return skillsDAO.findAll();
     }
 

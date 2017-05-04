@@ -31,7 +31,7 @@ public class HSkillsDAO implements SkillsDAO {
 
     @Override
     public List findAll() {
-        return sessionFactory.getCurrentSession().createQuery("select p from Projects p").list();
+        return sessionFactory.getCurrentSession().createQuery("select s from Skills s").list();
     }
 
     public void setSessionFactory(SessionFactory sessionFactory) {

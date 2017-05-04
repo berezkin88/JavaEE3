@@ -22,9 +22,11 @@ public class Main {
     }
 
     private void start() {
-        companiesController.deleteCompany("Moby");
         companiesController.getAllCompanies().forEach(System.out::println);
-
+        customersController.getAllCustomers().forEach(System.out::println);
+        developersController.getAllDevelopers().forEach(System.out::println);
+        projectsController.getAllProjects().forEach(System.out::println);
+        skillsController.getAllSkills().forEach(System.out::println);
     }
 
     public void setCompaniesController(CompaniesController companiesController) {
