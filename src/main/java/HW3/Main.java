@@ -1,6 +1,8 @@
 package HW3;
 
 import HW3.Controllers.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,6 +16,7 @@ public class Main {
     private DevelopersController developersController;
     private ProjectsController projectsController;
     private SkillsController skillsController;
+    private final static Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-context.xml", "hibernate-context.xml");
